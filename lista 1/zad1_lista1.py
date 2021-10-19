@@ -1,3 +1,4 @@
+# Jakub Ignatowicz zadanie 1 lista 1
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -13,4 +14,9 @@ for i in range(len(x)):  # petla sluzaca do obliczenia ilosci miejsc zerowych
 print(f"Ilość miejsc zerowych = {x0}")
 
 plt.plot(x, y)
+plt.xlabel("x")
+plt.ylabel("y")
+plt.xticks(np.arange(0, 1.6, 0.1))
+plt.yticks(np.arange(-3, 3.1, 0.5))
+plt.title("cos(x) - 3sin(tg(x) - 1)")
 plt.show()
