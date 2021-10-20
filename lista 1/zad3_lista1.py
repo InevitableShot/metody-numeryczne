@@ -1,6 +1,6 @@
 # Jakub Ignatowicz zadanie 3 lista 1
 import numpy as np
-import scipy as sp
+from scipy import linalg as slin
 
 A = np.array([[4, -2, 1],
               [-2, 4, -2],
@@ -17,7 +17,7 @@ w = np.array([[1],
 print(f"AB = {np.matmul(A,B)}")
 print(f"Aw = {np.matmul(A,w)}")
 print(f"B(Aw) = {np.matmul(B,np.matmul(A,w))}")
-print(f"det A = {np.round(np.linalg.det(A))}")
-print(f"det B = {np.round(np.linalg.det(B))}")
-print(f"A^-1 = {np.linalg.inv(A)}")
-print(f"B^-1 = {np.linalg.inv(B)}")
+print(f"det A = {slin.det(A)}")
+print(f"det B = {slin.det(B)}")
+print(f"A^-1 = {slin.inv(A)}")
+print(f"B^-1 = {slin.inv(B)}")
