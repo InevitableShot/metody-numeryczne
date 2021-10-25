@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 x = np.arange(0, 1.5, 0.001)  # deklaruje przedzial x-ow
-y = np.cos(x) - 3 * np.sin(np.tan(x) - 1)  # deklaruje przedzial y-ow
+y = np.cos(x) - 3 * np.sin(np.tan(x) - 1)  # wyliczam y-ki na podstawie x-ow
 
 x0 = 0  # zmienna na ilosc miejsc zerowych
 for i in range(len(x)):  # petla sluzaca do obliczenia ilosci miejsc zerowych
