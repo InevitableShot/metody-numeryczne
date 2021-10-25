@@ -14,10 +14,10 @@ w = np.array([[1],
               [-2],
               [3]])
 
-print(f"AB = {np.matmul(A,B)}")
-print(f"Aw = {np.matmul(A,w)}")
-print(f"B(Aw) = {np.matmul(B,np.matmul(A,w))}")
+print(f"AB = \n{np.matmul(A,B)}")
+print(f"Aw = \n{np.matmul(A,w)}")
+print(f"B(Aw) = \n{np.matmul(B,np.matmul(A,w))}")
 print(f"det A = {slin.det(A)}")
 print(f"det B = {slin.det(B)}")
-print(f"A^-1 = {slin.inv(A)}")
-print(f"B^-1 = {slin.inv(B)}")
+print(f"A^-1 = \n{slin.inv(A)}")
+print(f"B^-1 = \n{slin.inv(B)}")
