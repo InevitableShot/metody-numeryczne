@@ -11,9 +11,11 @@ A = np.array([[0, 0, 2, 1, 2],
 
 # wektor b
 b = np.array([[1],
-             [1],
-             [-4],
-             [-2],
-             [-1]])
+              [1],
+              [-4],
+              [-2],
+              [-1]])
 
-print(f"x = {slin.solve(A,b)}")
+x = slin.solve(A,b)  # uzywam funkcji solve z modulu linalg z biblioteki scipy, wedlug polecenia, funkcja ta rozwiazuje uklad rownan Ax=b, uzywajac do tego metody eliminacji Gaussa
+print(f"x1 = {x[0][0]}\tx2 = {x[1][0]}\tx3 = {x[2][0]}\tx4 = {x[3][0]}\tx5 = {x[4][0]}")
+# Wyniki wychodza poprawne
