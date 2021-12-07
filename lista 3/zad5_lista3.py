@@ -29,12 +29,12 @@ C = np.array([[-1., 1., -4.],
               [3., 3., 2.]])
 
 D = np.array([[0.], [1.], [0.5]])
+
 print("Zadanie 1")
 print(Gauss(C, D))
 # funkcja poprawnie obliczyla wyniki
 
 # zadanie 2
-print("Zadanie 2")
 L = np.array([[1., 0., 0.],
               [3/2, 1., 0.],
               [1/2, 11/13, 1.]])
@@ -47,6 +47,7 @@ U = np.array([[2., -3., -1.],
               [0., 13/2, -7/2],
               [0., 0., 32/13]])
 
+print("Zadanie 2")
 print(Gauss(U,y))
 # funkcja poprawnie obliczyla wyniki
 
@@ -57,17 +58,19 @@ A = np.array([[0., 0., 2., 1., 2.],
               [0., 0., 0., -1., 1.],
               [0., 1., -1., 1., -1.]])
 B = np.array([[1.], [1.], [-4.], [-2.], [-1.]])
+
 print("Zadanie 3")
 print(Gauss(A, B))
 # funkcja poprawnie obliczyla wyniki
 
 # zadanie 4
-print("Zadanie 4")
 x = np.array([[1., 0., 0., 0., 0.],
               [1., 1., 1., 1., 1.],
               [1., 3., 9., 27., 81.],
               [1., 5., 25., 125., 625.],
               [1., 6., 36., 216., 1296.]])
 y = np.array([[-1.], [1.], [3.], [2.], [-2.]])
+
+print("Zadanie 4")
 print(Gauss(x, y))
 # funkcja poprawnie obliczyla wyniki
