@@ -1,26 +1,33 @@
 # Jakub Ignatowicz zadanie 3 lista 5
 import numpy as np
-import matplotlib.pyplot as plt
 from scipy.interpolate import CubicSpline
+import matplotlib.pyplot as plt
 
-x = np.array([0.2, 2, 20, 200, 2000, 20000])
-y = np.array([103, 13.9, 2.72, 0.8, 0.401, 0.433])
+# Dane z zadania
+Re = np.array([0.2, 2, 20, 200, 2000, 20000], dtype=float)
+cd = np.array([103, 13.9, 2.72, 0.8, 0.401, 0.433], dtype=float)
 
-log_x = np.log(x)
-log_y = np.log(y)
 
-log_cubic_spline = CubicSpline(log_x, log_y)
+y = CubicSpline(Re, cd)                             # dopasowuje funkcje korzystajac z naturalnej funkcji sklejanej - CubicSpline
 
-x_poly = [5, 50, 5000]
-c_d = np.exp(log_cubic_spline(np.log(x_poly)))
-print(f'c_d = {c_d}')
+Re_to_find = [5.50, 5000]                           # tablica wartosci Re dla ktorych szukamy wartosci cD
 
-x_poly_2 = np.arange((0.2), (20000), 1)
-d2 = np.exp(log_cubic_spline(np.log(x_poly_2)))
+# znalezienie oraz wypisanie wartosci cD dla zadanego Re_1 i Re_2
+print(f'Dla Re - {Re_to_find[0]}\t cD = {y(Re_to_find[0])}')
+print(f'Dla Re - {Re_to_find[1]}\t cD = {y(Re_to_find[1])}')
 
-plt.plot(x,y,'o')
-plt.plot(x_poly, c_d, 'og')
-plt.plot(x_poly_2,d2)
-plt.xscale('log')
-plt.yscale('log')
+# wartosci potrzebne do narysowania wykresu
+x = np.arange(0, 20001, 0.1)
+y1 = y(x)
+
+# Wykres
+plt.plot(x, y1, 'b')
+plt.plot(Re, cd, 'og')
+plt.plot(Re_to_find, y(Re_to_find), 'or')           # drugiego punktu nie widac na wykresie poniewaz nie miesci sie w zakresie
+plt.legend(['cD(Re) - dopasowana metoda CubicSpline', 'dane', 'rozwiazania'], loc='upper left')
+plt.title("Wspolczynnik oporu cD jako funkcja liczby Re")
+plt.xlabel("Re")
+plt.ylabel("cD")
+plt.xscale('log')                                   # ustawiam skale logarytmiczna dla x-ow
+plt.yscale('log')                                   # ustawiam skale logarytmiczna dla y-ow
 plt.show()
