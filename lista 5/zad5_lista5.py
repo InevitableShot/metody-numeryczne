@@ -24,5 +24,4 @@ plt.legend(['dane', 'funkcja liniowa', 'funkcja kwadratowa'], loc='best')
 plt.title('wykres do zadania 5')
 plt.show()
 
-
 # Funkcja kwadratowa jest lepiej dopasowana do tych danych, poniewaz punkty lepiej sie z nia pokrywaja na wykresie
