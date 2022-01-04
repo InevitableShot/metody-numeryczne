@@ -2,19 +2,21 @@
 import numpy as np
 from scipy.misc import derivative
 
+# Definuje funkcje z zadania
 def f(x):
     return np.log(np.tanh(x/(x**2+1)))
 
+# Dana z zadania
 x = 0.2
 
-r = 3
+np1_5 = derivative(f, x, dx=0.0001, n=1, order=5)   # Ustawiam order = 5, poniewaz ilosc 5 punktow jest najbardziej odpowiednia dla naszego zadania
+np2_5 = derivative(f, x, dx=0.0001, n=2, order=5)
+np3_5 = derivative(f, x, dx=0.0001, n=3, order=5)
+print(f"h = {0.0001}")
+print(f"f'({x}) = {np1_5}")
+print(f"f''({x}) = {np2_5}")
+print(f"f'''({x}) = {np3_5}")
 
-for h in np.arange(0, 0.1, 1e-6):
-    np1_5 = derivative(f, x, dx=h,n=1,order=5)
-    np2_5 = derivative(f, x, dx=h,n=2,order=5)
-    np3_5 = derivative(f, x, dx=h,n=3,order=5)
-    if 4.500 <=round(np1_5,r)<=4.510 and -27.145 <=round(np2_5,r)<=-27.140 and 254.600 <=round(np3_5,r)<=254.6102 :
-        print(f"h={h}")
-        print(f"f'({x})={np1_5}")
-        print(f"f''({x})={np2_5}")
-        print(f"f'''({x})={np3_5}")
+# Dla wartosci h = 0.0001 obliczone pochodne maja najwieksza dokladnosc, doszedlem do tego testujac kolejne wartosci
+# i sprawdzajac je z wynikiem na wolfram alpha, nie nalezy przesadzac ze zbyt mala wartoscia h, poniewaz w pewnym momencie,
+# nasze bledy zaczynaja rosnac zamiast malec i dzieje sie tak przy h = 0.00001
